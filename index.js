@@ -5,10 +5,13 @@ import fs from 'fs';
 import path from 'path';
 import { pathToFileURL } from 'url';
 
-const express = require('express');
+import express from 'express';
+
 const app = express();
-app.get('/', (req, res) => res.send('Lavalink Bot is Online!'));
-app.listen(process.env.PORT || 8000, () => console.log('Koyeb Health Check Server is Ready.'));
+const port = process.env.PORT || 8000;
+
+app.get('/', (req, res) => res.send('Bot is Running!'));
+app.listen(port, () => console.log(`Health check server is listening on port ${port}`));
 
 // 여기서부터 기존의 discord.js 코드가 시작되면 됩니다.
 
