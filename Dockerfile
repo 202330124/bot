@@ -2,7 +2,7 @@ FROM node:20-slim
 
 # Java 및 FFmpeg 설치
 RUN apt-get update && \
-    apt-get install -y openjdk-21-jre ffmpeg python3 build-essential && \
+    apt-get install -y openjdk-17-jre ffmpeg python3 build-essential && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
