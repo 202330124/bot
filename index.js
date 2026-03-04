@@ -67,7 +67,7 @@ client.on(Events.InteractionCreate, async interaction => {
     if(!command) return;
 
     // 타임아웃 설정
-    const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 10000));
+    const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 13000));
 
     try {
         await Promise.race([ command.execute(interaction, shoukaku), timeout ]);
