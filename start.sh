@@ -9,7 +9,7 @@ java -Xmx256M -jar Lavalink.jar &
 cd ..
 
 # 3. Lavalink이 완전히 켜질 때까지 대기 (구조가 복잡할수록 넉넉히 13초 권장)
-sleep 13
+sleep 30
 
 # 4. 노드 봇 실행
 node index.js
