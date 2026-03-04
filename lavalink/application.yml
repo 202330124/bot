@@ -1,0 +1,31 @@
+server: # REST and WS server
+  port: 2333
+  address: 0.0.0.0
+lavalink:
+  plugins:
+    # ✅ 핵심: 유튜브 플러그인을 자동으로 다운로드합니다.
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.0"
+      snapshot: false
+  server:
+    password: "0000"
+    sources:
+      # ✅ 중요: 기본 내장 유튜브 소스는 끄고(false), 플러그인만 씁니다.
+      youtube: false
+      http: true
+      local: false
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    opusEncodingQuality: 10
+    resamplingQuality: LOW
+    trackStuckThresholdMs: 10000
+
+# 👇 플러그인 상세 설정
+plugins:
+  youtube:
+    enabled: true
+    # 봇이 사람인 척 연기할 클라이언트 목록 (MUSIC이 가장 잘 됩니다)
+    clients:
+      - MUSIC
+      - WEB
+      - WEBEMBEDDED
+      - ANDROID_VR
