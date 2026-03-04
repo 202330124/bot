@@ -12,6 +12,9 @@ export default {
         }),
 
     async execute(interaction, shoukaku) {
+        // 우선 대기
+        await interaction.deferReply();
+
         // 유저 음성 채널 확인
         const userVoiceChannel = interaction.member.voice.channel;
 
@@ -59,9 +62,6 @@ export default {
 
             return interaction.editReply({ embeds: [embed] });
         }
-
-        // 우선 대기
-        await interaction.deferReply();
 
         // 노드 및 트랙 검색
         const node = shoukaku.options.nodeResolver(shoukaku.nodes);
